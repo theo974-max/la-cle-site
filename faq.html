@@ -2043,89 +2043,40 @@
   .door-scene.is-revealed .door-panel { transform: rotateY(-108deg); pointer-events: none; }
   .door-scene.is-revealed .door-light { opacity: 1; }
 
-  /* ====== VIDÉO QUI SORT DE LA PORTE ====== */
-  .video-stage {
-    max-width: 720px;
-    margin: 30px auto 0;
-    position: relative;
-    perspective: 1300px;
-  }
-  /* halo de lumière dorée qui accompagne la sortie */
-  .video-stage::before {
-    content: '';
+  /* ====== VIDÉO LOGÉE DANS LA PORTE ====== */
+  .door-video {
     position: absolute;
-    left: 50%; top: -40px;
-    width: 60%; height: 70%;
-    transform: translateX(-50%);
-    background: radial-gradient(ellipse at center,
-      rgba(255,225,150,.85) 0%, rgba(201,151,31,.4) 40%, transparent 72%);
-    filter: blur(22px);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-    transition: opacity .5s ease;
-  }
-  .video-stage.show::before {
-    opacity: 1;
-    animation: haloFade 1.8s ease forwards;
-  }
-  @keyframes haloFade {
-    0%   { opacity: 0; }
-    35%  { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-  .video-wrap {
-    position: relative;
-    z-index: 1;
-    transform-style: preserve-3d;
-    /* état initial : la vidéo est "dans" la porte — reculée, inclinée, masquée */
-    opacity: 0;
-    transform: translateY(-90px) translateZ(-260px) rotateX(32deg) scale(.9);
-    transform-origin: center top;
-    /* révélée depuis une fente centrale, comme l'embrasure */
-    clip-path: inset(0 46% 0 46% round 8px);
-    filter: brightness(2.6) saturate(.7);
-    pointer-events: none;
-    transition: none;
-  }
-  /* la vidéo franchit le seuil et s'avance vers le spectateur */
-  .video-stage.show .video-wrap {
-    opacity: 1;
-    transform: translateY(0) translateZ(0) rotateX(0deg) scale(1);
-    clip-path: inset(0 0% 0 0% round 8px);
-    filter: brightness(1) saturate(1);
-    pointer-events: auto;
-    transition:
-      transform 1.15s cubic-bezier(.22,.9,.3,1.08),
-      clip-path 1.05s cubic-bezier(.4,0,.2,1) .12s,
-      opacity .4s ease,
-      filter 1s ease .15s;
-  }
-  .video-stage video {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-    border: 3px solid var(--gold-deep);
-    box-shadow: 0 36px 70px -20px rgba(31,24,18,.6),
-                0 0 0 1px rgba(201,151,31,.3);
+    inset: 14px;
+    border-radius: 6px;
+    overflow: hidden;
     background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 1;            /* derrière le battant (z-index 3) */
+    transition: opacity .4s ease .55s;
   }
-  /* éclat doré sur le bord haut, comme la lumière de la porte */
-  .video-wrap::after {
+  /* la vidéo s'inscrit dans l'embrasure, entière (format respecté) */
+  .door-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  /* halo doré quand la porte révèle la vidéo */
+  .door-video::after {
     content: '';
     position: absolute;
-    inset: -3px;
-    border-radius: 8px;
-    box-shadow: 0 -14px 40px -6px rgba(255,220,140,.9);
-    opacity: 0;
+    inset: 0;
+    box-shadow: inset 0 0 50px 8px rgba(255,220,140,.55);
     pointer-events: none;
+    opacity: 0;
     transition: opacity .6s ease;
   }
-  .video-stage.show .video-wrap::after {
-    animation: edgeGlow 1.6s ease forwards;
-  }
-  @keyframes edgeGlow {
+  .door-scene.is-revealed .door-video { opacity: 1; }
+  .door-scene.is-revealed .door-video::after { animation: doorGlow 1.6s ease forwards; }
+  @keyframes doorGlow {
     0%   { opacity: 0; }
     40%  { opacity: 1; }
     100% { opacity: 0; }
@@ -2249,6 +2200,10 @@
       <div class="door-stage">
         <div class="door-frame">
           <div class="door-light"></div>
+          <!-- la vidéo, logée dans l'embrasure de la porte -->
+          <div class="door-video" id="doorVideo">
+            <video id="faqVideo" src="video.mp4" playsinline controls preload="metadata"></video>
+          </div>
           <div class="door-panel" id="doorPanel" role="button" tabindex="0"
                aria-label="Ouvrir la porte">
             <span class="door-handle"></span>
@@ -2269,13 +2224,6 @@
         <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         clique pour ouvrir
       </span>
-    </div>
-
-    <!-- VIDÉO QUI SORT DE LA PORTE -->
-    <div class="video-stage" id="videoStage">
-      <div class="video-wrap">
-        <video id="faqVideo" src="video.mp4" playsinline controls preload="metadata"></video>
-      </div>
     </div>
 
     <button class="door-replay" id="doorReplay">
@@ -2380,7 +2328,6 @@
     const scene  = document.getElementById('doorScene');
     const panel  = document.getElementById('doorPanel');
     const replay = document.getElementById('doorReplay');
-    const stage  = document.getElementById('videoStage');
     const video  = document.getElementById('faqVideo');
     let busy = false;
 
@@ -2409,10 +2356,9 @@
         scene.classList.remove('is-unlocking');
         scene.classList.add('is-open');
       }, 3800);
-      // 4. la vidéo jaillit de la porte et grandit vers son format normal
+      // 4. la vidéo se révèle dans l'embrasure de la porte et se lance
       setTimeout(() => {
         scene.classList.add('is-revealed');
-        stage.classList.add('show');
         replay.classList.add('show');
         if (video) {
           video.currentTime = 0;
@@ -2428,7 +2374,6 @@
       if (video) video.pause();
       scene.classList.remove('is-revealed', 'is-open', 'is-unlocking',
                              'is-inserting', 'is-knocking', 'is-arriving', 'has-played');
-      stage.classList.remove('show');
       replay.classList.remove('show');
     }
 
