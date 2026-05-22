@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Message envoyé — Merci ! | La Clé</title>
+<meta name="description" content="Votre message a bien été envoyé à La Clé. On vous répond sous 24h ouvrées." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#1f1812" />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --night: #f5ede0;
+    --gold: #c9971f;
+    --ink: #1f1812;
+    --text-soft: rgba(31, 24, 18, 0.72);
+    --display: 'Anton', 'Impact', sans-serif;
+    --serif: 'Instrument Serif', serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: var(--sans);
+    background: var(--night);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px;
+  }
+  .wrap { max-width: 540px; }
+  .key {
+    width: 64px; height: 64px;
+    margin: 0 auto 32px;
+  }
+  .label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(38px, 8vw, 64px);
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  h1 .scribble { color: var(--gold); }
+  p {
+    font-family: var(--serif);
+    font-size: clamp(18px, 3vw, 22px);
+    color: var(--text-soft);
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 28px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+    background: var(--ink);
+    color: var(--night);
+    border-radius: 3px;
+    transition: transform .2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <svg class="key" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#c9971f" stroke-width="5" stroke-linecap="round">
+        <circle cx="24" cy="24" r="11"/>
+        <path d="M31 31 L48 48"/>
+        <path d="M41 41 L48 34 M45 45 L52 38"/>
+      </g>
+    </svg>
+    <div class="label">Message reçu</div>
+    <h1>La porte est <span class="scribble">ouverte.</span></h1>
+    <p>Merci pour votre message — on l'a bien reçu. On revient vers vous sous 24h ouvrées, avec un échange clair et sans engagement.</p>
+    <a href="index.html" class="btn">
+      Retour à l'accueil
+      <svg viewBox="0 0 24 24" fill="none" width="14" height="14"><path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</body>
+</html>
