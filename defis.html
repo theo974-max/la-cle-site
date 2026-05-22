@@ -889,6 +889,40 @@
   }
   .defi-card:hover .defi-link { gap: 12px; }
 
+  /* carte proposer un défi : champ entreprise + bouton mailto */
+  .defi-card.defi-propose { cursor: default; }
+  .defi-propose .mail-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0 6px;
+  }
+  .defi-propose .mail-field label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--gold);
+  }
+  .defi-propose .mail-field input {
+    background: rgba(255,255,255,0.07);
+    border: 1.5px solid rgba(201,151,31,0.4);
+    color: var(--cream);
+    padding: 11px 14px;
+    font-family: var(--sans);
+    font-size: 14px;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .defi-propose .mail-field input:focus { border-color: var(--gold); }
+  .defi-propose .mail-field input::placeholder { color: rgba(245,240,232,0.4); }
+  .defi-link-btn {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .defi-link-btn:hover { gap: 12px; }
+
   /* ============ SERVICES ============ */
   .services {
     background:
@@ -1860,7 +1894,7 @@
       </a>
 
       <!-- Idée / Proposer un défi -->
-      <a class="defi-card reveal" href="index.html#contact">
+      <div class="defi-card reveal defi-propose">
         <div class="defi-bg idea"></div>
         <div class="defi-content">
           <span class="defi-status idea">Proposer</span>
@@ -1870,9 +1904,14 @@
           <p class="defi-desc">
             Un défi sportif à imaginer ensemble ? Une cause à soutenir ? Une ville, un métier, une rencontre à provoquer ? Lancez-nous l'idée.
           </p>
-          <span class="defi-link">Nous contacter →</span>
+          <div class="mail-field">
+            <label for="defiEntreprise">Nom de votre entreprise</label>
+            <input type="text" id="defiEntreprise" placeholder="Ex : Boulangerie Martin" />
+          </div>
+          <a href="mailto:contact@lacle.fr?subject=Vous%20avez%20un%20nouveau%20d%C3%A9fi"
+             id="defiMailBtn" class="defi-link defi-link-btn">Nous lancer le défi →</a>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1902,6 +1941,23 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // bouton défi : objet du mail rempli avec le nom de l'entreprise
+  (function () {
+    const champ = document.getElementById('defiEntreprise');
+    const btn   = document.getElementById('defiMailBtn');
+    if (champ && btn) {
+      function maj() {
+        const ent = champ.value.trim();
+        const objet = ent
+          ? 'Vous avez un nouveau défi — ' + ent
+          : 'Vous avez un nouveau défi';
+        btn.href = 'mailto:contact@lacle.fr?subject=' + encodeURIComponent(objet);
+      }
+      champ.addEventListener('input', maj);
+      maj();
+    }
+  })();
 </script>
 
 </body>
