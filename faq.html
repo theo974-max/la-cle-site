@@ -1883,105 +1883,183 @@
     80%  { transform: translateX(-50%) scale(1); opacity: 1; }
     100% { transform: translateX(-50%) scale(.9); opacity: 0; }
   }
-  /* cadre / chambranle */
+  /* cadre / chambranle — Art déco luxe */
   .door-frame {
     position: absolute;
     inset: 0;
-    background: linear-gradient(160deg, var(--warm), var(--steel));
-    border: 4px solid var(--gold-deep);
-    border-radius: 10px 10px 4px 4px;
-    box-shadow: 0 32px 64px -20px rgba(31,24,18,.42),
-                inset 0 0 0 8px rgba(201,151,31,.12);
+    background:
+      linear-gradient(160deg, #1c1610 0%, #2a2018 50%, #14100b 100%);
+    border: 3px solid var(--gold);
+    border-radius: 4px;
+    box-shadow:
+      0 36px 70px -20px rgba(31,24,18,.55),
+      inset 0 0 0 5px rgba(20,16,11,.9),
+      inset 0 0 0 7px var(--gold-deep),
+      inset 0 0 0 14px rgba(20,16,11,.9);
     overflow: hidden;
   }
-  /* lumière derrière la porte */
+  /* emblème clé — cœur du portail */
+  .door-emblem {
+    position: absolute;
+    top: 42%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 33%; height: auto;
+    color: rgba(212,165,55,.7);
+    z-index: 4;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px rgba(201,151,31,.4));
+  }
+  /* lueur magique éclatante derrière la porte */
   .door-light {
     position: absolute;
     inset: 14px;
-    border-radius: 6px;
-    background: radial-gradient(ellipse at center,
-      #fff6e0 0%, var(--gold) 45%, var(--sunset) 100%);
+    border-radius: 3px;
+    background:
+      radial-gradient(ellipse at center,
+        #ffffff 0%, #f4ecff 26%, #d9c4ff 50%, #9d7bff 78%, #4a2f8f 100%);
     opacity: 0;
     transition: opacity .5s ease .25s;
   }
-  /* le battant */
+  /* rayons de lumière magique */
+  .door-light::before {
+    content: '';
+    position: absolute;
+    inset: -40%;
+    background: conic-gradient(from 0deg,
+      transparent 0deg, rgba(255,255,255,.55) 14deg, transparent 28deg,
+      transparent 42deg, rgba(255,255,255,.55) 56deg, transparent 70deg,
+      transparent 84deg, rgba(255,255,255,.55) 98deg, transparent 112deg,
+      transparent 126deg, rgba(255,255,255,.55) 140deg, transparent 154deg,
+      transparent 168deg, rgba(255,255,255,.55) 182deg, transparent 196deg,
+      transparent 210deg, rgba(255,255,255,.55) 224deg, transparent 238deg,
+      transparent 252deg, rgba(255,255,255,.55) 266deg, transparent 280deg,
+      transparent 294deg, rgba(255,255,255,.55) 308deg, transparent 322deg,
+      transparent 336deg, rgba(255,255,255,.55) 350deg, transparent 360deg);
+    animation: rayspin 14s linear infinite;
+    opacity: .7;
+  }
+  @keyframes rayspin { to { transform: rotate(360deg); } }
+  /* halo central pulsant */
+  .door-light::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center,
+      rgba(255,255,255,.95) 0%, rgba(255,255,255,0) 55%);
+    animation: haloPulse 2.6s ease-in-out infinite;
+  }
+  @keyframes haloPulse {
+    0%,100% { opacity: .55; transform: scale(.9); }
+    50%     { opacity: 1;   transform: scale(1.05); }
+  }
+  /* le battant — lisse, profond, effet portail */
   .door-panel {
     position: absolute;
     inset: 14px;
-    border-radius: 6px;
-    background: linear-gradient(155deg, #2a2018 0%, #1f1812 55%, #14100b 100%);
-    border: 2px solid var(--gold-deep);
+    border-radius: 3px;
+    background:
+      /* reflet satiné vertical */
+      linear-gradient(100deg,
+        transparent 0%, rgba(201,151,31,.07) 38%, rgba(255,233,168,.13) 47%,
+        rgba(201,151,31,.07) 56%, transparent 100%),
+      /* matière sombre profonde */
+      linear-gradient(160deg, #2e2316 0%, #201810 52%, #110c07 100%);
+    border: 2px solid var(--gold);
     transform-origin: left center;
     transform-style: preserve-3d;
     transition: transform 1s cubic-bezier(.66,.04,.3,1) .45s;
     cursor: pointer;
-    box-shadow: inset 0 0 44px rgba(0,0,0,.55);
+    box-shadow:
+      inset 0 0 70px rgba(0,0,0,.6),
+      inset 0 0 0 4px rgba(20,15,8,.85);
     z-index: 3;
+    overflow: hidden;
   }
   .door-panel:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
-  /* panneaux décoratifs */
-  .door-panel::before,
+  /* grande arche dorée — l'intérieur du portail */
+  .door-panel::before {
+    content: '';
+    position: absolute;
+    left: 14%; right: 14%;
+    top: 9%; bottom: 9%;
+    border: 1.5px solid rgba(201,151,31,.5);
+    border-radius: 50% 50% 6px 6px / 30% 30% 4px 4px;
+    box-shadow:
+      inset 0 0 40px rgba(0,0,0,.55),
+      0 0 18px rgba(201,151,31,.12);
+  }
+  /* halo doux derrière l'emblème clé */
   .door-panel::after {
     content: '';
     position: absolute;
-    left: 16%; right: 16%;
-    border: 2px solid rgba(201,151,31,.4);
-    border-radius: 4px;
-    display: none;       /* panneaux décoratifs masqués (évite les lignes parasites) */
+    top: 42%; left: 50%;
+    width: 44%; aspect-ratio: 1;
+    transform: translate(-50%,-50%);
+    background: radial-gradient(circle,
+      rgba(201,151,31,.22) 0%, transparent 70%);
+    pointer-events: none;
   }
-  .door-panel::before { top: 8%; height: 38%; }
-  .door-panel::after  { bottom: 8%; height: 38%; }
 
-  /* poignée — sphère dorée */
+  /* poignée — laiton Art déco, sphère facettée sur rosace */
   .door-handle {
     position: absolute;
-    top: 50%; right: 13%;
-    width: 24px; height: 24px;
+    top: 50%; right: 12%;
+    width: 26px; height: 26px;
     transform: translateY(-50%);
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%,
-      #ffe9a8 0%, var(--gold) 45%, var(--gold-deep) 100%);
-    box-shadow: 0 2px 7px rgba(0,0,0,.55), inset 0 -2px 4px rgba(0,0,0,.35);
+    background: radial-gradient(circle at 34% 28%,
+      #fff2c8 0%, #e8b73d 40%, var(--gold-deep) 78%, #6e4f12 100%);
+    box-shadow:
+      0 2px 8px rgba(0,0,0,.6),
+      inset 0 -2px 5px rgba(0,0,0,.4),
+      0 0 0 4px rgba(20,15,8,.85),
+      0 0 0 6px rgba(201,151,31,.55);
     z-index: 5;
     transition: transform .4s ease .35s;
   }
   .door-handle::before {
     content: '';
     position: absolute;
-    top: 50%; left: -8px;
-    width: 10px; height: 7px;
+    top: 50%; left: -9px;
+    width: 11px; height: 8px;
     transform: translateY(-50%);
     background: linear-gradient(var(--gold), var(--gold-deep));
     border-radius: 2px;
   }
 
-  /* serrure — plaque + trou de clé, sous la poignée */
+  /* serrure — plaque Art déco allongée + trou de clé */
   .door-lock {
     position: absolute;
-    top: calc(50% + 46px);
-    right: 13.4%;
-    width: 28px; height: 38px;
+    top: calc(50% + 50px);
+    right: 12.6%;
+    width: 30px; height: 44px;
     transform: translateY(-50%);
-    background: linear-gradient(150deg, var(--gold) 0%, var(--gold-deep) 100%);
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,.5), inset 0 0 0 1.5px rgba(255,255,255,.15);
+    background: linear-gradient(150deg,
+      #fff2c8 0%, var(--gold) 35%, var(--gold-deep) 100%);
+    border-radius: 6px 6px 8px 8px;
+    box-shadow:
+      0 2px 7px rgba(0,0,0,.55),
+      inset 0 0 0 1.5px rgba(255,255,255,.2),
+      inset 0 0 0 4px rgba(20,15,8,.5);
     z-index: 5;
   }
+  /* petits chevrons déco en haut de la plaque */
   .door-lock::before {
     content: '';
     position: absolute;
-    top: 9px; left: 50%;
+    top: 11px; left: 50%;
     transform: translateX(-50%);
-    width: 9px; height: 9px;
+    width: 10px; height: 10px;
     border-radius: 50%;
     background: var(--night-deep);
+    box-shadow: 0 0 0 2px rgba(255,255,255,.12);
   }
   .door-lock::after {
     content: '';
     position: absolute;
-    top: 16px; left: 50%;
+    top: 19px; left: 50%;
     transform: translateX(-50%);
-    width: 4px; height: 13px;
+    width: 5px; height: 15px;
     background: var(--night-deep);
     border-radius: 0 0 2px 2px;
   }
@@ -1989,10 +2067,10 @@
   /* clé — démarre hors de la serrure, va s'y engager */
   .door-key {
     position: absolute;
-    top: calc(50% + 46px);
-    right: 13.4%;
-    width: 40px; height: 40px;
-    transform: translate(70px, -50%);
+    top: calc(50% + 50px);
+    right: 12.6%;
+    width: 42px; height: 42px;
+    transform: translate(72px, -50%);
     transform-origin: 78% 50%;
     color: var(--gold);
     z-index: 6;
@@ -2207,6 +2285,12 @@
           </div>
           <div class="door-panel" id="doorPanel" role="button" tabindex="0"
                aria-label="Ouvrir la porte">
+            <!-- gravure de la clé, au centre du panneau haut -->
+            <svg class="door-emblem" viewBox="0 0 24 24" fill="none">
+              <circle cx="8" cy="12" r="4.4" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12.4 12H21M17.6 12V15.4M21 12V14.6" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
             <span class="door-handle"></span>
             <span class="door-lock"></span>
             <svg class="door-key" viewBox="0 0 24 24" fill="none">
