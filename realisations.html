@@ -6,1859 +6,305 @@
 <title>Réalisations — Nos projets | La Clé</title>
 <meta name="description" content="Découvrez les projets réalisés par La Clé : le devis vivant, une plateforme automobile, le portfolio MEDKEY et la chaîne de défis The K." />
 <meta name="author" content="La Clé" />
-<meta name="theme-color" content="#1f1812" />
+<meta name="theme-color" content="#161210" />
 <link rel="canonical" href="https://lacle.fr/realisations.html" />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="La Clé" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:title" content="Réalisations — Nos projets | La Clé" />
-<meta property="og:description" content="Découvrez les projets réalisés par La Clé : le devis vivant, une plateforme automobile, le portfolio MEDKEY et la chaîne de défis The K." />
+<meta property="og:description" content="Les projets réalisés par le studio La Clé." />
 <meta property="og:url" content="https://lacle.fr/realisations.html" />
 <meta property="og:image" content="https://lacle.fr/assets/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Réalisations — Nos projets | La Clé" />
-<meta name="twitter:description" content="Découvrez les projets réalisés par La Clé : le devis vivant, une plateforme automobile, le portfolio MEDKEY et la chaîne de défis The K." />
+<meta name="twitter:description" content="Les projets réalisés par le studio La Clé." />
 <meta name="twitter:image" content="https://lacle.fr/assets/og-image.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
 <style>
-  :root {
-    /* Fond crème lumineux */
-    --night: #f5ede0;
-    --night-deep: #faf5ea;
-    --steel: #ebe1d0;
-    --warm: #f0e4d0;
-    --sunset: #d97a35;
-    --gold: #c9971f;
-    --gold-deep: #9a7218;
-    --cream: #f5ede0;
-    --ink: #1f1812;
-    --rust: #b04a1f;
-    --text: #1f1812;
-    --text-soft: rgba(31, 24, 18, 0.72);
-    --text-mute: rgba(31, 24, 18, 0.5);
-    --line: rgba(31, 24, 18, 0.12);
-    --line-strong: rgba(201, 151, 31, 0.35);
+  .sec { padding: 70px 0 110px; }
 
-    --display: 'Anton', 'Impact', sans-serif;
-    --serif: 'Instrument Serif', serif;
-    --sans: 'Inter', system-ui, sans-serif;
-    --hand: 'Caveat', cursive;
+  /* filtres */
+  .filters {
+    display: flex; justify-content: center; gap: 10px;
+    flex-wrap: wrap; margin-bottom: 50px;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
+  .filter-btn {
     font-family: var(--sans);
-    background: var(--night-deep);
-    color: var(--text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  /* Grain global */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: overlay;
-  }
-
-  .container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-  .container-narrow {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 32px;
-  }
-
-  /* ============ NAV ============ */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(250, 245, 234, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 18px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-    font-family: var(--display);
-    font-size: 26px;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: 0.03em;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .logo svg {
-    width: 22px;
-    height: 22px;
-    color: var(--gold);
-  }
-  .logo .accent { color: var(--gold); }
-  .nav-links {
-    display: flex;
-    gap: 36px;
-    list-style: none;
-  }
-  .nav-links a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    opacity: 0.7;
-    transition: opacity 0.2s, color 0.2s;
-  }
-  .nav-links a:hover { opacity: 1; color: var(--gold-deep); }
-  .nav-links a.active { opacity: 1; color: var(--gold-deep); }
-  .nav-cta {
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--cream-soft);
     background: transparent;
-    color: var(--gold);
-    padding: 10px 20px;
-    border: 1.5px solid var(--gold);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    text-decoration: none;
-    transition: all 0.2s;
+    border: 1.5px solid var(--line);
+    border-radius: 2px;
+    padding: 11px 20px; cursor: pointer;
+    transition: all .22s var(--ease);
   }
-  .nav-cta:hover {
-    background: var(--gold);
-    color: var(--ink);
-  }
-
-  /* ============ HERO ============ */
-  .hero {
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .hero-bg img, .hero-bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(180deg, rgba(6,10,16,0.55) 0%, transparent 30%, transparent 60%, rgba(6,10,16,0.85) 100%),
-      linear-gradient(180deg, rgba(6,10,16,0.3) 0%, transparent 50%);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 140px 32px 80px;
-    max-width: 1240px;
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .hero-signature {
-    text-align: center;
-    font-family: var(--hand);
-    font-size: clamp(22px, 2.4vw, 32px);
-    color: var(--gold);
-    transform: rotate(-2deg);
-    margin-bottom: 18px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    animation: fadeUp 1s ease;
-  }
-
-  .hero-tagline {
-    text-align: center;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: #f5ede0;
-    margin-bottom: 40px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    animation: fadeUp 1s ease;
-  }
-
-  .hero-main {
-    text-align: center;
-    animation: fadeUp 1.2s ease 0.2s both;
-  }
-
-  .hero-display {
-    font-family: var(--display);
-    font-size: clamp(60px, 11vw, 160px);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    color: var(--cream);
-    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.15em;
-    font-weight: 400;
-  }
-  .hero-display .key-icon {
-    color: var(--gold);
-    font-size: 0.7em;
-    transform: rotate(0deg);
-    filter: drop-shadow(0 0 20px rgba(232, 176, 74, 0.5));
-    display: inline-block;
-    line-height: 1;
-  }
-
-  .hero-underline {
-    height: 4px;
-    width: 280px;
-    margin: 0 auto 20px;
-    background: var(--gold);
-    transform: skewX(-12deg);
-    box-shadow: 0 0 20px rgba(232, 176, 74, 0.4);
-  }
-
-  .hero-subtitle {
-    font-family: var(--hand);
-    font-size: clamp(28px, 3.5vw, 44px);
-    color: var(--cream);
-    font-style: italic;
-    margin-bottom: 56px;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
-    transform: rotate(-1deg);
-  }
-
-  .hero-route {
-    display: inline-flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 28px;
-    border: 1.5px solid var(--gold);
-    color: var(--cream);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 60px;
-    backdrop-filter: blur(6px);
-    background: rgba(6,10,16,0.3);
-  }
-  .hero-route .arrow {
-    color: var(--gold);
-    font-size: 18px;
-  }
-
-  /* Pictos */
-  .hero-pictos {
-    display: flex;
-    justify-content: center;
-    gap: clamp(28px, 6vw, 80px);
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-  }
-  .picto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  .picto svg {
-    width: 32px;
-    height: 32px;
-    color: var(--cream);
-    opacity: 0.9;
-    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
-  }
-  .picto-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--cream);
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  }
-
-  .hero-quote {
-    text-align: center;
-    margin-top: auto;
-    padding-top: 40px;
-  }
-  .hero-quote p {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: clamp(17px, 2vw, 22px);
-    color: var(--cream);
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-    margin-bottom: 8px;
-  }
-  .hero-quote p em {
-    color: var(--gold);
-    font-style: italic;
-  }
-  .hero-quote .signature {
-    font-family: var(--hand);
-    font-size: 22px;
-    color: var(--gold);
-    transform: rotate(-2deg);
-    display: inline-block;
-  }
-
-  /* Annotations photo style */
-  .annotation {
-    position: absolute;
-    font-family: var(--hand);
-    color: var(--cream);
-    font-size: 22px;
-    z-index: 2;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    transform: rotate(-3deg);
-    pointer-events: none;
-  }
-  .annotation .small {
-    font-size: 16px;
-    display: block;
-    opacity: 0.85;
-  }
-  .annotation .arrow-svg {
-    width: 50px;
-    height: 30px;
-    margin-top: 4px;
-    color: var(--cream);
-  }
-  .annotation.left {
-    top: 22%;
-    left: 6%;
-  }
-  .annotation.right {
-    top: 22%;
-    right: 8%;
-    transform: rotate(3deg);
-    text-align: right;
-  }
-
-  /* ============ SECTIONS ============ */
-  section { padding: 130px 0; position: relative; }
-
-  .section-label {
-    font-size: 12px;
-    color: var(--gold-deep);
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-weight: 600;
-    margin-bottom: 20px;
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .section-label::before {
-    content: '';
-    width: 28px; height: 1px;
-    background: var(--gold-deep);
-  }
-  h2 {
-    font-family: var(--display);
-    font-size: clamp(44px, 6vw, 84px);
-    font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: 0.01em;
-    margin-bottom: 28px;
-    max-width: 900px;
-    color: var(--ink);
-  }
-  h2 .scribble {
-    font-family: var(--hand);
-    font-style: italic;
-    color: var(--gold-deep);
-    font-weight: 600;
-    letter-spacing: 0;
-    text-transform: none;
-    transform: rotate(-1deg);
-    display: inline-block;
-  }
-  .section-lead {
-    font-size: 18px;
-    color: var(--text-soft);
-    max-width: 620px;
-    margin-bottom: 64px;
-    line-height: 1.6;
-  }
-
-  /* ============ CONCEPT ============ */
-  .concept {
-    background:
-      radial-gradient(ellipse at top right, rgba(232, 176, 74, 0.08) 0%, transparent 60%),
-      var(--night-deep);
-    border-top: 1px solid var(--line);
-  }
-  .concept-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    gap: 80px;
-    align-items: start;
-  }
-  .concept-list { list-style: none; margin-top: 16px; }
-  .concept-list li {
-    padding: 32px 0;
-    border-top: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: 70px 1fr;
-    gap: 28px;
-    align-items: start;
-  }
-  .concept-list li:last-child { border-bottom: 1px solid var(--line); }
-  .concept-list .num {
-    font-family: var(--display);
-    font-size: 32px;
-    color: var(--gold-deep);
-    line-height: 1;
-  }
-  .concept-list strong {
-    display: block;
-    color: var(--ink);
-    font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-family: var(--display);
-    letter-spacing: 0.02em;
-  }
-  .concept-list span {
-    color: var(--text-soft);
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* Devis card */
-  .devis-card {
-    background: #ffffff;
-    border: 1px solid var(--line-strong);
-    overflow: hidden;
-    position: sticky;
-    top: 100px;
-    box-shadow: 0 20px 50px rgba(31, 24, 18, 0.08);
-  }
-  .devis-head {
-    padding: 24px 28px;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(201, 151, 31, 0.06);
-  }
-  .devis-head-title {
-    font-family: var(--display);
-    font-size: 18px;
-    color: var(--ink);
-    letter-spacing: 0.05em;
-  }
-  .devis-head-meta {
-    font-size: 11px;
-    color: var(--gold-deep);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 600;
-  }
-  .devis-body { padding: 10px 28px 28px; }
-  .devis-row {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 20px;
-    padding: 22px 0;
-    border-bottom: 1px solid var(--line);
-    align-items: start;
-  }
-  .devis-row-label {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 5px;
-  }
-  .devis-row-desc {
-    font-size: 13px;
-    color: var(--text-soft);
-    line-height: 1.5;
-  }
-  .option-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 10px;
-    border: 1px solid var(--gold);
-    color: var(--gold-deep);
-    margin-left: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    vertical-align: middle;
-  }
-  .devis-row-price {
-    font-family: var(--display);
-    font-size: 19px;
-    color: var(--ink);
-    white-space: nowrap;
-    letter-spacing: 0.02em;
-  }
-  .devis-total {
-    margin-top: 10px;
-    padding-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-  .devis-total-label {
-    font-size: 11px;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 600;
-  }
-  .devis-total-value {
-    font-family: var(--display);
-    font-size: 44px;
-    color: var(--gold-deep);
-    letter-spacing: 0.02em;
-  }
-  .devis-foot {
-    padding: 16px 28px;
-    background: rgba(31, 24, 18, 0.04);
-    border-top: 1px solid var(--line);
-    font-family: var(--hand);
-    font-size: 17px;
-    color: var(--text-mute);
-  }
-
-  /* ============ DÉFIS ============ */
-  .defis {
-    background:
-      radial-gradient(ellipse at top, rgba(217, 122, 53, 0.12) 0%, transparent 60%),
-      linear-gradient(180deg, var(--night-deep) 0%, #f0e4d0 100%);
-    border-top: 1px solid var(--line);
-    position: relative;
-    overflow: hidden;
-  }
-  .defis::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(176, 74, 31, 0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .defis-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 64px;
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-  .defis-head-text { max-width: 700px; }
-  .defis-counter {
-    text-align: right;
-  }
-  .defis-counter-num {
-    font-family: var(--display);
-    font-size: clamp(60px, 8vw, 96px);
-    color: var(--gold-deep);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    text-shadow: 0 0 40px rgba(201, 151, 31, 0.2);
-  }
-  .defis-counter-label {
-    font-family: var(--hand);
-    font-size: 20px;
-    color: var(--ink);
-    margin-top: 4px;
-  }
-
-  .defis-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 28px;
-  }
-  .defi-card {
-    position: relative;
-    border: 1px solid var(--line-strong);
-    overflow: hidden;
-    transition: transform 0.4s ease, border-color 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    min-height: 380px;
-  }
-  .defi-card:hover {
-    transform: translateY(-6px);
+  .filter-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .filter-btn.active {
+    background: var(--gold); color: var(--ink);
     border-color: var(--gold);
   }
-  .defi-card.featured {
-    grid-row: span 2;
-    min-height: 600px;
-  }
 
-  .defi-bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+  /* grille projets */
+  .proj-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
   }
-  .defi-bg.thek {
-    background:
-      linear-gradient(180deg, transparent 0%, rgba(6,10,16,0.85) 100%),
-      linear-gradient(180deg, #1a2533 0%, #4a3020 50%, #c25a2a 100%);
+  .proj {
+    background: var(--ink-card);
+    border: 1px solid var(--line);
+    border-radius: 5px; overflow: hidden;
+    transition: transform .35s var(--ease), box-shadow .35s, opacity .3s;
+    display: flex; flex-direction: column;
   }
-  .defi-bg.thek::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0; height: 35%;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent 0, transparent 32px,
-      rgba(245, 237, 224, 0.35) 32px, rgba(245, 237, 224, 0.35) 38px,
-      transparent 38px, transparent 70px
-    );
-    opacity: 0.7;
+  .proj:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 26px 50px rgba(0,0,0,0.45);
   }
-  .defi-bg.thek::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 35%;
-    background: radial-gradient(ellipse at 50% 100%, rgba(244, 162, 73, 0.6) 0%, transparent 70%);
+  .proj.hide { display: none; }
+  .proj-img {
+    position: relative; aspect-ratio: 16/10; overflow: hidden;
   }
-  .defi-bg.parapente {
-    background:
-      linear-gradient(180deg, transparent 0%, rgba(6,10,16,0.85) 100%),
-      linear-gradient(180deg, #4a7ba8 0%, #f5b840 50%, #d97a35 80%, #6b3a1f 100%);
+  .proj-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .6s var(--ease);
+    filter: brightness(.82);
   }
-  .defi-bg.parapente::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0; height: 35%;
-    background:
-      linear-gradient(135deg, transparent 0%, transparent 30%, #2a3f4a 30%, #2a3f4a 65%, transparent 65%),
-      linear-gradient(225deg, transparent 0%, transparent 30%, #1f2f3a 30%, #1f2f3a 70%, transparent 70%);
-    opacity: 0.7;
-    clip-path: polygon(0% 100%, 0% 60%, 25% 30%, 50% 50%, 75% 20%, 100% 45%, 100% 100%);
-  }
-  .defi-bg.parapente::after {
-    content: '';
-    position: absolute;
-    top: 22%; left: 50%;
-    width: 110px; height: 28px;
-    transform: translateX(-50%);
-    background:
-      linear-gradient(90deg, #c9971f 0%, #f5b840 25%, #d97a35 50%, #f5b840 75%, #c9971f 100%);
-    border-radius: 100px 100px 8px 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-  }
-
-  .defi-bg.parachute {
-    background:
-      linear-gradient(180deg, transparent 0%, rgba(6,10,16,0.85) 100%),
-      linear-gradient(180deg, #1a3a5e 0%, #4a7ba8 40%, #9bc4e8 70%, #f5d4a8 100%);
-  }
-  .defi-bg.parachute::before {
-    content: '';
-    position: absolute;
-    top: 15%; left: 10%;
-    width: 80px; height: 30px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    box-shadow:
-      120px 40px 0 -8px rgba(255, 255, 255, 0.5),
-      200px 10px 0 -4px rgba(255, 255, 255, 0.7),
-      280px 60px 0 -10px rgba(255, 255, 255, 0.4);
-    filter: blur(2px);
-  }
-  .defi-bg.parachute::after {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    width: 60px; height: 80px;
-    transform: translate(-50%, -50%);
-    background:
-      radial-gradient(ellipse at 50% 20%, #f5b840 0%, #c9971f 60%, transparent 70%);
-    border-radius: 50% 50% 30% 30%;
-    opacity: 0.75;
-    box-shadow: 0 0 30px rgba(245, 184, 64, 0.4);
-  }
-
-  .defi-bg.next {
-    background:
-      linear-gradient(180deg, transparent 0%, rgba(6,10,16,0.92) 100%),
-      linear-gradient(180deg, #2a1f4a 0%, #6b3a6e 35%, #d97a35 70%, #f5b840 100%);
-    overflow: hidden;
-  }
-  /* Soleil */
-  .defi-bg.next::before {
-    content: '';
-    position: absolute;
-    bottom: 30%; left: 50%;
-    width: 160px; height: 160px;
-    transform: translateX(-50%);
-    background: radial-gradient(circle, rgba(255, 240, 200, 0.95) 0%, rgba(245, 184, 64, 0.6) 40%, transparent 70%);
-    border-radius: 50%;
-  }
-  /* Tour Eiffel en silhouette */
-  .defi-bg.next::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 50%;
-    width: 130px; height: 62%;
-    transform: translateX(-50%);
-    background: #1a1228;
-    clip-path: polygon(
-      42% 0%, 58% 0%,
-      56% 12%, 60% 12%, 58% 26%,
-      66% 48%, 72% 48%, 66% 60%,
-      80% 100%, 64% 100%,
-      58% 72%, 54% 72%, 54% 100%,
-      46% 100%, 46% 72%, 42% 72%,
-      36% 100%, 20% 100%,
-      34% 60%, 28% 60%, 34% 48%, 40% 48%,
-      42% 26%, 40% 12%, 44% 12%
-    );
-    opacity: 0.92;
-  }
-  .defi-bg.idea {
-    background:
-      linear-gradient(180deg, transparent 0%, rgba(6,10,16,0.85) 100%),
-      linear-gradient(135deg, #1a2533 0%, #4a2c2c 100%);
-  }
-
-  .defi-content {
-    position: relative;
-    z-index: 1;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  .defi-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    border-radius: 100px;
-    align-self: flex-start;
-    margin-bottom: auto;
-  }
-  .defi-status.live {
-    background: rgba(232, 176, 74, 0.15);
+  .proj:hover .proj-img img { transform: scale(1.07); }
+  .proj-status {
+    position: absolute; top: 14px; right: 14px;
+    font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 6px 11px; border-radius: 2px;
+    background: rgba(22,18,16,0.9);
+    border: 1px solid var(--line);
     color: var(--gold);
-    border: 1px solid var(--gold);
   }
-  .defi-status.live .dot {
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-  .defi-status.upcoming {
-    background: rgba(245, 237, 224, 0.1);
-    color: var(--cream);
-    border: 1px solid var(--cream);
-  }
-  .defi-status.idea {
-    background: transparent;
-    color: var(--text-mute);
-    border: 1px solid var(--text-mute);
-  }
-  .defi-status.done {
-    background: var(--gold);
-    color: #1f1812;
-    border: 1px solid var(--gold);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-    font-weight: 800;
-  }
-  .defi-status.done .check {
-    width: 13px;
-    height: 13px;
-  }
-  /* Image de fond pour les défis réalisés */
-  .defi-bg.photo {
-    background: var(--ink);
-  }
-  .defi-bg.photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-  }
-  .defi-card:hover .defi-bg.photo img {
-    transform: scale(1.05);
-  }
-  .defi-bg.photo::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(6,10,16,0.45) 0%, rgba(6,10,16,0.2) 30%, rgba(6,10,16,0.75) 65%, rgba(6,10,16,0.97) 100%);
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .defi-num {
-    font-family: var(--display);
-    font-size: 14px;
-    color: rgba(245, 237, 224, 0.85);
-    letter-spacing: 0.2em;
-    margin-bottom: 8px;
-    margin-top: 24px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
-  }
-  .defi-title {
-    font-family: var(--display);
-    font-size: clamp(28px, 3vw, 44px);
-    color: var(--cream);
-    letter-spacing: 0.03em;
-    line-height: 1;
-    margin-bottom: 12px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 4px 20px rgba(0,0,0,0.7);
-  }
-  .defi-card.featured .defi-title {
-    font-size: clamp(36px, 4vw, 56px);
-  }
-  .defi-tagline {
-    font-family: var(--hand);
-    font-size: 22px;
-    color: var(--gold-light);
-    margin-bottom: 16px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-  }
-  .defi-desc {
-    color: rgba(245, 237, 224, 0.92);
-    font-size: 14px;
-    line-height: 1.55;
-    margin-bottom: 20px;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
-  }
-  .defi-stats {
-    display: flex;
-    gap: 24px;
-    padding-top: 16px;
-    border-top: 1px solid rgba(245, 237, 224, 0.25);
-  }
-  .defi-stat-num {
-    font-family: var(--display);
-    font-size: 20px;
-    color: var(--cream);
-    letter-spacing: 0.02em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.9);
-  }
-  .defi-stat-label {
-    font-size: 10px;
-    color: rgba(245, 237, 224, 0.75);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 600;
-    margin-top: 2px;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
-  }
-  .defi-link {
-    margin-top: 16px;
-    font-family: var(--hand);
-    font-size: 18px;
-    color: var(--gold);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.3s ease;
-  }
-  .defi-card:hover .defi-link { gap: 12px; }
-
-  /* ============ SERVICES ============ */
-  .services {
-    background:
-      radial-gradient(ellipse at bottom left, rgba(194, 90, 42, 0.08) 0%, transparent 60%),
-      var(--night-deep);
-    border-top: 1px solid var(--line);
-  }
-  .services-list { display: grid; grid-template-columns: 1fr; }
-  .service-row {
-    display: grid;
-    grid-template-columns: 100px 1.2fr 1.8fr auto;
-    gap: 48px;
-    padding: 44px 0;
-    border-top: 1px solid var(--line);
-    align-items: center;
-    transition: padding 0.4s ease, background 0.4s ease;
-  }
-  .service-row:last-child { border-bottom: 1px solid var(--line); }
-  .service-row:hover {
-    padding-left: 16px;
-    padding-right: 16px;
-    background: rgba(232, 176, 74, 0.04);
-  }
-  .service-pic {
-    color: var(--gold-deep);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .service-pic svg { width: 44px; height: 44px; }
-  .service-title h3 {
-    font-family: var(--display);
-    font-size: 30px;
-    font-weight: 400;
-    color: var(--ink);
-    letter-spacing: 0.02em;
-    line-height: 1.05;
-    margin-bottom: 6px;
-  }
-  .service-title .meta {
-    font-family: var(--hand);
-    font-size: 18px;
-    color: var(--gold-deep);
-  }
-  .service-desc {
-    color: var(--text-soft);
-    font-size: 15px;
-    line-height: 1.65;
-  }
-  .service-desc .option-note {
-    display: block;
-    margin-top: 12px;
-    color: var(--gold-deep);
-    font-family: var(--hand);
-    font-size: 18px;
-  }
-  .service-arrow {
-    color: var(--text-mute);
-    font-family: var(--display);
-    font-size: 28px;
-    align-self: center;
-    transition: transform 0.4s ease, color 0.4s ease;
-  }
-  .service-row:hover .service-arrow {
-    color: var(--gold);
-    transform: translateX(10px);
-  }
-
-  /* ============ PORTFOLIO ============ */
-  .portfolio {
-    background:
-      radial-gradient(ellipse at top, rgba(232, 176, 74, 0.06) 0%, transparent 60%),
-      var(--night-deep);
-    border-top: 1px solid var(--line);
-  }
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-  .pf-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.4s ease;
-  }
-  .pf-card:hover { transform: translateY(-6px); }
-
-  .pf-visual {
-    aspect-ratio: 16/10;
-    border: 1px solid var(--line-strong);
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 24px;
-    background: #f5ede0;
-  }
-  .pf-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s ease;
-  }
-  .pf-card:hover .pf-img {
-    transform: scale(1.04);
-  }
-  .pf-devis {
-    background:
-      radial-gradient(circle at 75% 30%, rgba(232, 176, 74, 0.25) 0%, transparent 60%),
-      linear-gradient(135deg, var(--night) 0%, var(--steel) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px;
-  }
-  .pf-devis-inner {
-    width: 88%;
-    background: var(--cream);
-    padding: 20px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-  }
-  .pf-line {
-    height: 6px;
-    background: rgba(14, 22, 32, 0.15);
+  .proj-status.live { color: #6fcf86; border-color: rgba(111,207,134,0.4); }
+  .proj-body { padding: 28px 26px 30px; flex: 1; display: flex; flex-direction: column; }
+  .proj-cat {
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.13em; color: var(--gold);
     margin-bottom: 9px;
   }
-  .pf-line.short { width: 55%; }
-  .pf-line.accent { background: var(--gold); width: 32%; height: 10px; }
-
-  .pf-thek {
-    background:
-      linear-gradient(180deg, #1a2533 0%, #4a3020 50%, #c25a2a 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 30px;
-    overflow: hidden;
-  }
-  .pf-thek::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 40%;
-    background:
-      radial-gradient(ellipse at 50% 100%, rgba(244, 162, 73, 0.6) 0%, transparent 70%);
-  }
-  .pf-thek::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0; height: 30%;
-    background:
-      linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 100%),
-      repeating-linear-gradient(
-        90deg,
-        transparent 0, transparent 32px,
-        rgba(245, 237, 224, 0.4) 32px, rgba(245, 237, 224, 0.4) 38px,
-        transparent 38px, transparent 70px
-      );
-  }
-  .pf-thek-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    margin-bottom: auto;
-    margin-top: 20px;
-  }
-  .pf-thek-play {
-    width: 56px;
-    height: 56px;
-    border: 2px solid var(--cream);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 14px;
-    backdrop-filter: blur(4px);
-    background: rgba(0,0,0,0.2);
-  }
-  .pf-thek-play svg {
-    width: 22px;
-    height: 22px;
-    color: var(--cream);
-    margin-left: 3px;
-  }
-  .pf-thek-title {
+  .proj-body h3 {
     font-family: var(--display);
-    color: var(--cream);
-    font-size: 28px;
-    letter-spacing: 0.04em;
-    text-shadow: 0 3px 12px rgba(0,0,0,0.5);
-    margin-bottom: 4px;
-  }
-  .pf-thek-route {
-    font-family: var(--hand);
-    font-size: 18px;
-    color: var(--cream);
-    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-    position: relative;
-    z-index: 1;
-  }
-
-  .pf-medkey {
-    background:
-      radial-gradient(circle at 30% 30%, rgba(232, 176, 74, 0.15) 0%, transparent 60%),
-      linear-gradient(135deg, #0a0a0a 0%, var(--night) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 30px;
-    overflow: hidden;
-  }
-  .pf-medkey::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(90deg, transparent 0, transparent 49px, rgba(232,176,74,0.08) 49px, rgba(232,176,74,0.08) 50px),
-      repeating-linear-gradient(0deg, transparent 0, transparent 49px, rgba(232,176,74,0.08) 49px, rgba(232,176,74,0.08) 50px);
-  }
-  .pf-medkey-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-  .pf-medkey-title {
-    font-family: var(--display);
-    color: var(--cream);
-    font-size: 48px;
-    letter-spacing: 0.08em;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 0 30px rgba(232,176,74,0.2);
-    margin-bottom: 6px;
-  }
-  .pf-medkey-meta {
-    font-family: var(--hand);
-    font-size: 20px;
-    color: var(--gold);
-  }
-
-  .pf-auto {
-    background:
-      linear-gradient(180deg, var(--night) 0%, var(--warm) 60%, var(--rust) 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 30px;
-  }
-  .pf-auto::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0; height: 28%;
-    background: repeating-linear-gradient(
-      90deg,
-      transparent 0, transparent 38px,
-      rgba(232, 176, 74, 0.6) 38px, rgba(232, 176, 74, 0.6) 44px,
-      transparent 44px, transparent 80px
-    );
-  }
-  .pf-auto-title {
-    font-family: var(--display);
-    color: var(--cream);
-    font-size: 44px;
-    text-align: center;
-    z-index: 1;
-    letter-spacing: 0.04em;
-    text-shadow: 0 4px 16px rgba(0,0,0,0.4);
-  }
-  .pf-auto-meta {
-    font-family: var(--hand);
-    font-size: 22px;
-    color: var(--gold);
-    margin-top: 6px;
-    z-index: 1;
-  }
-
-  .pf-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    font-size: 26px; text-transform: uppercase;
     margin-bottom: 10px;
   }
-  .pf-meta {
-    font-size: 11px;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 600;
+  .proj-body p {
+    font-size: 14px; color: var(--text-mute);
+    line-height: 1.65; flex: 1;
   }
-  .pf-status {
-    font-family: var(--hand);
-    font-size: 18px;
-    color: var(--gold-deep);
-  }
-  .pf-card h3 {
-    font-family: var(--display);
-    font-size: 30px;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 10px;
-    letter-spacing: 0.02em;
-  }
-  .pf-card p {
-    color: var(--text-soft);
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* ============ MANIFESTO ============ */
-  .manifesto {
-    background: var(--night-deep);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .manifesto::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(232, 176, 74, 0.18) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .manifesto-text {
-    font-family: var(--serif);
-    font-size: clamp(30px, 4.5vw, 52px);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    max-width: 900px;
-    margin: 0 auto;
-    font-weight: 400;
-    position: relative;
-    z-index: 1;
-  }
-  .manifesto-text em {
-    font-style: italic;
-    color: var(--gold-deep);
-  }
-  .manifesto-sig {
-    margin-top: 48px;
-    font-family: var(--hand);
-    font-size: 26px;
-    color: var(--gold-deep);
-    transform: rotate(-2deg);
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ============ CONTACT ============ */
-  .contact {
-    background:
-      linear-gradient(180deg, #0e1620 0%, #2a1f18 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .contact::before {
-    content: '';
-    position: absolute;
-    bottom: -30%; left: 50%;
-    transform: translateX(-50%);
-    width: 800px; height: 800px;
-    background: radial-gradient(circle, rgba(244, 162, 73, 0.2) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 80px;
-    align-items: start;
-    position: relative;
-    z-index: 1;
-  }
-  .contact h2 { margin-bottom: 28px; color: var(--cream); }
-  .contact-lead {
-    font-size: 19px;
-    color: var(--cream);
-    line-height: 1.6;
-    margin-bottom: 44px;
-    max-width: 500px;
-  }
-  .contact-cta-row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .btn {
-    padding: 16px 28px;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.25s ease;
-    cursor: pointer;
-    border: 1.5px solid transparent;
-  }
-  .btn-primary {
-    background: var(--gold);
-    color: var(--ink);
-  }
-  .btn-primary:hover {
-    background: var(--cream);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(201, 151, 31, 0.4);
-  }
-  .btn-ghost {
-    background: transparent;
-    color: var(--cream);
-    border-color: var(--cream);
-  }
-  .btn-ghost:hover {
-    background: var(--cream);
-    color: var(--ink);
-  }
-
-  .contact-card {
-    background: rgba(6, 10, 16, 0.5);
-    border: 1px solid var(--line-strong);
-    padding: 40px;
-    backdrop-filter: blur(12px);
-  }
-  .contact-card-title {
-    font-family: var(--hand);
-    font-size: 28px;
-    margin-bottom: 32px;
+  .proj-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 18px;
+    font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
     color: var(--gold);
-    transform: rotate(-1deg);
+    transition: gap .2s var(--ease);
   }
-  .channel {
-    padding: 20px 0;
-    border-top: 1px solid var(--line);
-  }
-  .channel:first-of-type { border-top: none; padding-top: 0; }
-  .channel-label {
-    font-size: 10px;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  .channel-value {
-    font-family: var(--display);
-    font-size: 20px;
-    color: var(--cream);
-    letter-spacing: 0.02em;
-  }
-  .channel a {
-    color: var(--cream);
-    text-decoration: none;
-    border-bottom: 1px solid var(--gold);
-    transition: border-color 0.2s;
-  }
-  .channel a:hover { border-color: var(--cream); }
+  .proj-link:hover { gap: 14px; }
+  .proj-link.disabled { color: var(--text-mute); pointer-events: none; }
 
-  /* ============ FOOTER ============ */
-  footer {
-    background: #0e1620;
-    border-top: 1px solid rgba(245, 237, 224, 0.12);
-    padding: 60px 0 32px;
-    text-align: center;
-    color: var(--cream);
-  }
-  .footer-display {
-    font-family: var(--display);
-    font-size: clamp(40px, 6vw, 72px);
-    color: var(--cream);
-    letter-spacing: 0.03em;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.15em;
-  }
-  .footer-display .accent {
-    color: var(--gold);
-  }
-  .footer-display svg {
-    width: 0.55em;
-    height: 0.55em;
-    color: var(--gold);
-  }
-  .footer-tag {
-    font-family: var(--hand);
-    font-size: 22px;
-    color: var(--gold);
-    transform: rotate(-1deg);
-    display: inline-block;
-    margin-bottom: 36px;
-  }
-  .footer-line {
-    width: 60px;
-    height: 2px;
-    background: var(--gold);
-    margin: 0 auto 28px;
-    transform: skewX(-12deg);
-  }
-  .footer-meta {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    flex-wrap: wrap;
-    padding-top: 28px;
-    border-top: 1px solid rgba(245, 237, 224, 0.12);
-  }
-  .footer-meta p {
-    font-size: 11px;
-    color: rgba(245, 237, 224, 0.55);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 500;
-  }
-
-  /* ============ HISTOIRE ============ */
-  .histoire {
-    padding: 120px 0;
-    background:
-      radial-gradient(ellipse at top, rgba(217, 122, 53, 0.08) 0%, transparent 60%),
-      var(--night-deep);
-    border-top: 1px solid var(--line);
-    position: relative;
-    overflow: hidden;
-  }
-  .histoire-head {
-    text-align: center;
-    margin-bottom: 56px;
-  }
-  .histoire-head .section-label {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .histoire-head h2 {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .histoire-lead {
-    font-size: 17px;
-    color: var(--text-soft);
-    max-width: 580px;
-    margin: 16px auto 0;
-    line-height: 1.55;
-  }
-
-  /* Music card */
-  .music-card {
-    max-width: 620px;
-    margin: 0 auto 80px;
-    background: var(--ink);
-    color: var(--cream);
-    border-radius: 14px;
-    padding: 22px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 20px 50px rgba(31, 24, 18, 0.18);
-    position: relative;
-    overflow: hidden;
-  }
-  .music-card::before {
-    content: '';
-    position: absolute;
-    top: -50%; right: -20%;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(201, 151, 31, 0.25) 0%, transparent 60%);
-    pointer-events: none;
-  }
-  .music-cover {
-    width: 72px; height: 72px;
-    flex-shrink: 0;
-    background: linear-gradient(135deg, #b04a1f 0%, #d97a35 50%, #f5b840 100%);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  }
-  .music-cover svg {
-    width: 28px; height: 28px;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  .music-info {
-    flex: 1;
-    position: relative;
-    z-index: 1;
-    text-align: left;
-    min-width: 0;
-  }
-  .music-eyebrow {
-    font-size: 10px;
-    color: var(--gold-light);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-  .music-title {
-    font-family: var(--display);
-    font-size: 20px;
-    letter-spacing: 0.02em;
-    margin-bottom: 2px;
-    color: var(--cream);
-  }
-  .music-meta {
-    font-family: var(--hand);
-    color: var(--gold-light);
-    font-size: 17px;
-  }
-  .music-actions {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .music-btn {
-    padding: 10px 16px;
-    border-radius: 100px;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: transform 0.2s, background 0.2s;
-    white-space: nowrap;
-  }
-  .music-btn svg { width: 12px; height: 12px; }
-  .music-btn.yt {
-    background: var(--gold);
-    color: var(--ink);
-  }
-  .music-btn.yt:hover {
-    background: var(--gold-light);
-    transform: translateY(-1px);
-  }
-  .music-btn.sp {
-    background: transparent;
-    color: var(--cream);
-    border: 1px solid rgba(245, 237, 224, 0.3);
-  }
-  .music-btn.sp:hover {
-    background: rgba(245, 237, 224, 0.1);
-    border-color: var(--cream);
-  }
-  .music-hint {
-    text-align: center;
-    margin-top: -60px;
-    margin-bottom: 80px;
-    font-family: var(--hand);
-    color: var(--text-mute);
-    font-size: 17px;
-  }
-
-  /* Profils */
-  .profiles-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .profile-card {
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 12px 32px rgba(31, 24, 18, 0.06);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  .profile-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(31, 24, 18, 0.1);
-  }
-  .profile-photo {
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, var(--steel) 0%, var(--warm) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold-deep);
-    position: relative;
-    border-bottom: 1px solid var(--line);
-  }
-  .profile-photo::after {
-    content: 'Photo à venir';
-    font-family: var(--hand);
-    font-size: 20px;
-    opacity: 0.5;
-    position: absolute;
-    bottom: 20px;
-  }
-  .profile-photo .placeholder-icon {
-    width: 56px; height: 56px;
-    opacity: 0.3;
-  }
-  .profile-photo.has-img {
-    background: var(--ink);
-    border-bottom: 1px solid var(--line);
-  }
-  .profile-photo.has-img::after {
-    display: none;
-  }
-  .profile-photo.has-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-  }
-  .profile-card:hover .profile-photo.has-img img {
-    transform: scale(1.04);
-  }
-  .profile-body { padding: 32px; }
-  .profile-name {
-    font-family: var(--display);
-    font-size: 32px;
-    color: var(--ink);
-    letter-spacing: 0.02em;
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .profile-role {
-    font-family: var(--hand);
-    font-size: 20px;
-    color: var(--gold-deep);
-    margin-bottom: 22px;
-  }
-  .profile-bio {
-    color: var(--text-soft);
-    font-style: italic;
-    font-family: var(--serif);
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 22px;
-  }
-  .profile-traits {
-    list-style: none;
-    border-top: 1px solid var(--line);
-    padding-top: 18px;
-  }
-  .profile-traits li {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 14px;
-    padding: 7px 0;
-  }
-  .profile-traits .label {
-    font-size: 10px;
-    color: var(--text-mute);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 600;
-    padding-top: 2px;
-  }
-  .profile-traits .value {
-    color: var(--ink);
-    font-weight: 500;
-    font-size: 14px;
-  }
-  .profile-quote {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 16px;
-    color: var(--ink);
-    line-height: 1.4;
-  }
-  .profile-quote::before {
-    content: '"';
-    font-size: 30px;
-    color: var(--gold);
-    line-height: 0;
-    vertical-align: -6px;
-    margin-right: 4px;
-  }
-
-  /* Reveal */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  /* Responsive */
-  @media (max-width: 1200px) {
-    .defis-grid { grid-template-columns: 1fr 1fr; }
-    .defi-card.featured { grid-column: span 2; grid-row: auto; min-height: 380px; }
-  }
-  @media (max-width: 900px) {
-    .nav-links { display: none; }
-    .concept-grid, .portfolio-grid, .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 48px;
-    }
-    .profiles-grid { grid-template-columns: 1fr; gap: 24px; }
-    .music-card { flex-direction: column; text-align: center; padding: 24px; }
-    .music-info { text-align: center; }
-    .music-actions { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-    .profile-body { padding: 26px; }
-    .profile-traits li { grid-template-columns: 90px 1fr; gap: 10px; }
-    .defis-grid { grid-template-columns: 1fr; gap: 20px; }
-    .defi-card.featured { grid-column: auto; min-height: 380px; }
-    .defis-head { flex-direction: column; align-items: flex-start; }
-    .defis-counter { text-align: left; }
-    .service-row {
-      grid-template-columns: 60px 1fr;
-      gap: 20px;
-    }
-    .service-row .service-desc { grid-column: 1 / -1; }
-    .service-row .service-arrow { display: none; }
-    .service-pic svg { width: 32px; height: 32px; }
-    section { padding: 80px 0; }
-    .container, .container-narrow { padding: 0 20px; }
-    .nav-inner { padding: 14px 20px; }
-    .devis-card { position: static; }
-    .annotation { display: none; }
-    .hero-pictos { gap: 20px; }
-    .picto svg { width: 26px; height: 26px; }
-    .picto-label { font-size: 10px; }
+  @media (max-width: 760px) {
+    .proj-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="logo">
-      LA<svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M11.5 12H20M17 12V15M20 12V14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="accent">CLÉ</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="defis.html">Défis</a></li>
-      <li><a href="realisations.html" class="active">Réalisations</a></li>
-      <li><a href="equipe.html">Équipe</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-    <a href="index.html#contact" class="nav-cta">Démarrer</a>
-  </div>
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    LA
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g fill="none" stroke="#c9971f" stroke-width="5" stroke-linecap="round">
+        <circle cx="24" cy="24" r="11"/><path d="M31 31 L48 48"/>
+        <path d="M41 41 L48 34 M45 45 L52 38"/>
+      </g>
+    </svg>
+    CLÉ
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="realisations.html" class="active">Réalisations</a></li>
+    <li><a href="defis.html">Défis</a></li>
+    <li><a href="equipe.html">Équipe</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Demander un devis</a></li>
+  </ul>
+  <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- PORTFOLIO -->
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="reveal" style="margin-bottom: 64px;">
-      <div class="section-label">Réalisations</div>
-      <h2>Ce qu'on a déjà <span class="scribble">déverrouillé.</span></h2>
-      <p class="section-lead">
-        Deux projets pour démarrer. Deux univers différents. Une même rigueur d'exécution.
-      </p>
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Réalisations</span>
+    <h1 class="h-display">Ce qu'on a déjà <span class="serif-accent">déverrouillé.</span></h1>
+    <p>Des univers différents, une même rigueur d'exécution.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+
+    <div class="filters reveal">
+      <button class="filter-btn active" data-f="all">Tout</button>
+      <button class="filter-btn" data-f="web">Sites web</button>
+      <button class="filter-btn" data-f="outil">Outils</button>
+      <button class="filter-btn" data-f="video">Vidéo</button>
     </div>
 
-    <div class="portfolio-grid">
-      <a class="pf-card reveal" href="https://devis-client.vercel.app" target="_blank" rel="noopener">
-        <div class="pf-visual">
-          <img class="pf-img" src="assets/realisations-00-9072cacd6a.jpg" alt="Le devis vivant — plateforme de devis interactifs" />
-        </div>
-        <div class="pf-info">
-          <span class="pf-meta">Projet 01 · Web app</span>
-          <span class="pf-status">en ligne</span>
-        </div>
-        <h3>Le devis vivant</h3>
-        <p>Notre plateforme propriétaire pour générer des devis interactifs et faire de la transparence un argument commercial fort.</p>
-      </a>
+    <div class="proj-grid">
 
-      <a class="pf-card reveal" href="https://cleanned.fr" target="_blank" rel="noopener">
-        <div class="pf-visual">
-          <img class="pf-img" src="assets/realisations-01-111749c289.jpg" alt="Cleanned — Plateforme de lavage automobile" />
+      <article class="proj reveal" data-cat="outil" data-d="1">
+        <div class="proj-img">
+          <img src="assets/realisations-00-9072cacd6a.jpg" alt="Le devis vivant" />
+          <span class="proj-status live">En ligne</span>
         </div>
-        <div class="pf-info">
-          <span class="pf-meta">Projet 02 · Vitrine</span>
-          <span class="pf-status">en ligne</span>
+        <div class="proj-body">
+          <div class="proj-cat">Web app · Outil propriétaire</div>
+          <h3>Le devis vivant</h3>
+          <p>Notre plateforme propriétaire pour générer des devis interactifs
+             et faire de la transparence un argument commercial fort.</p>
+          <a href="https://devis-client.vercel.app" target="_blank" rel="noopener" class="proj-link">
+            Voir le projet
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
-        <h3>Plateforme automobile</h3>
-        <p>Site complet pour un garage : présentation du parc, demandes de reprise, prise de rendez-vous pour le lavage. Une vitrine qui travaille.</p>
-      </a>
+      </article>
 
-      <a class="pf-card reveal" href="https://aymen-cherfi-portfolio.vercel.app" target="_blank" rel="noopener">
-        <div class="pf-visual">
-          <img class="pf-img" src="assets/realisations-02-c8d3119f17.jpg" alt="MEDKEY — Portfolio Aymen Cherfi" />
+      <article class="proj reveal" data-cat="web" data-d="2">
+        <div class="proj-img">
+          <img src="assets/realisations-01-111749c289.jpg" alt="Plateforme automobile" />
+          <span class="proj-status live">En ligne</span>
         </div>
-        <div class="pf-info">
-          <span class="pf-meta">Projet 03 · Portfolio</span>
-          <span class="pf-status">en ligne</span>
+        <div class="proj-body">
+          <div class="proj-cat">Vitrine · Site web</div>
+          <h3>Plateforme auto</h3>
+          <p>Site complet pour un garage : présentation du parc, demandes de
+             reprise, prise de rendez-vous pour le lavage. Une vitrine qui travaille.</p>
+          <a href="https://cleanned.fr" target="_blank" rel="noopener" class="proj-link">
+            Voir le projet
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
-        <h3>MEDKEY — Aymen Cherfi</h3>
-        <p>Portfolio personnel d'Aymen : direction artistique, image, mouvement. Une vitrine soignée pour les projets vidéo et créatifs.</p>
-      </a>
+      </article>
 
-      <a class="pf-card reveal" href="https://www.youtube.com/channel/UCWs4CnHRr5wrAAxjyaevR0Q" target="_blank" rel="noopener">
-        <div class="pf-visual">
-          <img class="pf-img" src="assets/realisations-03-5e6bb2be92.jpg" alt="The K — Nîmes Marseille à vélo" />
+      <article class="proj reveal" data-cat="web" data-d="3">
+        <div class="proj-img">
+          <img src="assets/realisations-02-c8d3119f17.jpg" alt="MEDKEY — portfolio Aymen Cherfi" />
+          <span class="proj-status live">En ligne</span>
         </div>
-        <div class="pf-info">
-          <span class="pf-meta">Projet 04 · YouTube</span>
-          <span class="pf-status">en cours</span>
+        <div class="proj-body">
+          <div class="proj-cat">Portfolio · Site web</div>
+          <h3>MEDKEY</h3>
+          <p>Portfolio personnel d'Aymen : direction artistique, image, mouvement.
+             Une vitrine soignée pour les projets vidéo et créatifs.</p>
+          <a href="https://aymen-cherfi-portfolio.vercel.app" target="_blank" rel="noopener" class="proj-link">
+            Voir le projet
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
-        <h3>The K — l'aventure</h3>
-        <p>Chaîne YouTube de défis sportifs et rencontres. Chaque clé ouvre une nouvelle porte, chaque porte une nouvelle aventure.</p>
-      </a>
+      </article>
+
+      <article class="proj reveal" data-cat="video" data-d="4">
+        <div class="proj-img">
+          <img src="assets/realisations-03-5e6bb2be92.jpg" alt="The K — chaîne YouTube de défis" />
+          <span class="proj-status">En cours</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat">YouTube · Vidéo</div>
+          <h3>The K — l'aventure</h3>
+          <p>Chaîne YouTube de défis sportifs et de rencontres. Chaque clé ouvre
+             une nouvelle porte, chaque porte une nouvelle aventure.</p>
+          <a href="https://www.youtube.com/channel/UCWs4CnHRr5wrAAxjyaevR0Q" target="_blank" rel="noopener" class="proj-link">
+            Voir la chaîne
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none"><path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-display">
-      LA<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="6" r="4" stroke="currentColor" stroke-width="2.5"/><path d="M12 10V22M12 16H16M12 19H15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg><span class="accent">CLÉ</span>
+<section class="cta-banner">
+  <div class="inner wrap">
+    <span class="eyebrow reveal" style="margin-bottom:18px;">À vous de jouer</span>
+    <h2 class="h-display reveal" data-d="1">Le prochain projet, <span class="serif-accent">c'est le vôtre.</span></h2>
+    <p class="reveal" data-d="2">Réservez un appel — on chiffre clair, sans engagement.</p>
+    <div class="reveal" data-d="3" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://calendly.com/" target="_blank" rel="noopener" class="btn btn-primary">
+        Réserver un appel gratuit
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="mailto:contact@lacle.fr" class="btn btn-ghost">contact@lacle.fr</a>
     </div>
-    <div class="footer-line"></div>
-    <div class="footer-tag">une aventure à la fois</div>
-    <div class="footer-meta">
-      <p>© 2026 La Clé</p>
-      <p>Nîmes — France</p>
-      <p>Studio de commerce digital</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          LA
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" stroke="#c9971f" stroke-width="5" stroke-linecap="round">
+              <circle cx="24" cy="24" r="11"/><path d="M31 31 L48 48"/>
+              <path d="M41 41 L48 34 M45 45 L52 38"/>
+            </g>
+          </svg>
+          CLÉ
+        </div>
+        <p class="footer-tag">une aventure à la fois</p>
+      </div>
+      <div class="footer-col">
+        <h4>Le studio</h4>
+        <a href="services.html">Services</a>
+        <a href="realisations.html">Réalisations</a>
+        <a href="defis.html">Défis sport</a>
+        <a href="equipe.html">L'équipe</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:contact@lacle.fr">contact@lacle.fr</a>
+        <p>Nîmes — France</p>
+        <p>Réponse sous 24h</p>
+        <a href="index.html#contact">Demander un devis</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 La Clé — Studio de commerce digital</span>
+      <span>Nîmes, France</span>
     </div>
   </div>
 </footer>
 
-
+<script src="assets/main.js"></script>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
+  // filtres réalisations
+  var btns = document.querySelectorAll('.filter-btn');
+  var projs = document.querySelectorAll('.proj');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.dataset.f;
+      projs.forEach(function (p) {
+        var show = (f === 'all' || p.dataset.cat === f);
+        p.classList.toggle('hide', !show);
+      });
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  });
 </script>
-
 </body>
 </html>
